@@ -1,24 +1,5 @@
 
-/*body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    background: #395eac;
-    background: -webkit-linear-gradient(
-        to bottom,
-        #99a2b5
-        #b7b9be
-    );
-    background: linear-gradient(
-        to bottom,
-        #99a2b5,
-        #b7b9be
 
-    );
-}
-*/
 header{
     width: 100%;
     height: 70px;
