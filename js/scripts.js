@@ -1,37 +1,64 @@
-console.log("Logged in");
+//Her er fetchen for details siden    
 
+function fetchData(){
+  fetch("https://temtem-api.mael.tech/api/temtems")
+    .then(Response =>{
+      return Response.json();
+    })
+    .then(data => {
+      console.log(data);
+      const html = data.map(temtems =>{
+        return `
+        <div class="temtems">
+          <p><img src="${temtems.portraitWikiUrl}" alt="${temtems.name}"/></p>
+          <p> Name: ${temtems.name}</p>
+          <p> Number: ${temtems.number}</p>
+          <p> Type: ${temtems.types}</p>
 
-const apiData = {
-    url: "https://temtem-api.mael.tech/api/",
-    type: "temtems",
-    id: "113",
+        </div>
+        `;  
+      })
+      .join("");
+      console.log(html);
+      document.querySelector("#allTems").insertAdjacentHTML("afterbegin", html);
+    })
+    .catch(error => {
+      console.log(error);  
+    });  
 }
-const {url, type, id} = apiData
-const apiUrl = `${url}${type}/${id}`
 
-
-fetch(apiUrl)
-    .then( (data) =>  (data.json()))
-    .then( (temtem) => editHtml(temtem) )
-
-
-const editHtml = (data) => {
-    console.log(data)
-    const html = `
-        <div class= "name">${data.name}</div>
-        <img src=${data.portraitWikiUrl}>
-        <div class = "details">
-            <span>Height: ${data.details.height.inches}</span>
-            <span>Weight: ${data.details.weight.lbs}</span>
-        </div>    
-    `
-
-    const temtemDiv = document.querySelector('.temtem')
-    temtemDiv.innerHTML = html
-
-}    
+fetchData();
 
 
 
+//Her er fetchen for index siden
 
 
+function fetchData2(){
+    fetch("https://temtem-api.mael.tech/api/temtems")
+      .then(Response =>{
+        return Response.json();
+      })
+      .then(data => {
+        console.log(data);
+        const html = data.map(temtems =>{
+          return `
+          <div class="temtems">
+            
+            <p> Name: ${temtems.name}</p>
+            <p> Number: ${temtems.number}</p>
+    
+  
+          </div>
+          `;  
+        })
+        .join("");
+        console.log(html);
+        document.querySelector("#allTemsName").insertAdjacentHTML("afterbegin", html);
+      })
+      .catch(error => {
+        console.log(error);  
+      });  
+  }
+  
+  fetchData2();
