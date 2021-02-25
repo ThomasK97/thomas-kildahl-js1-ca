@@ -14,6 +14,7 @@ function fetchData(){
           <p> Name: ${temtems.name}</p>
           <p> Number: ${temtems.number}</p>
           <p> Type: ${temtems.types}</p>
+          <p> Desrciption: ${temtems.gameDescription}</p>
 
         </div>
         `;  
@@ -47,6 +48,7 @@ function fetchData2(){
             
             <p> Name: ${temtems.name}</p>
             <p> Number: ${temtems.number}</p>
+            
     
   
           </div>
