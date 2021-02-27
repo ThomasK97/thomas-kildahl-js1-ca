@@ -48,6 +48,7 @@ function fetchData2(){
             
             <p> Name: ${temtems.name}</p>
             <p> Number: ${temtems.number}</p>
+            <p> Catch Rate: ${temtems.catchRate}</p>
             
     
   
