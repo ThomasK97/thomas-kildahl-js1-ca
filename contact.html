@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-
+    
     <title>Contact</title>
 </head>
 <body>
@@ -22,33 +21,37 @@
             </ul>
         </nav>
     </header>
+ <div class="wrapper">
 
     <h2>Contact</h2>
-    <form>
-        <label>
-            Name
-            <input type="text" class="name"/>
-        </label>
-        <label>
-            Subject
-            <input type="text" class="subject"/>
-        </label>
-        
-        <label>
-            E-mail
-            <input type="email" class="email"/>
-        </label>
-        <label>
-            Address
-            <input type="text" class="address"/>
-        </label>
-        <div class="status">
-
-        </div>
-        <button type="submit" class="submit">
-          Send
-        </button>
+    <div id="error_message"></div>
+    
+    <form action="" id="form" onsubmit=
+  "return validation()">
+      <div class="input_field">
+           <input type="text" placeholder="Name"
+  id="name">
+      </div>
+      <div class="input_field">
+        <input type="text" placeholder="Subject"
+  id="subject">
+      </div>
+      <div class="input_field">
+        <input type="text" placeholder="Email"
+  id="email">
+      </div>
+      <div class="input_field">
+        <input type="text" placeholder="Adress"
+  id="adress">
+      </div>
+      <div class="btn">
+          <input type="submit">
+      </div>
     </form>
+  </div> 
+
+    
+    
     
 
     <script src="/js/script-2.js"></script>

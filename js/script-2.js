@@ -3,43 +3,52 @@ console.log("logged in nr 2");
 //js for contact siden
 
 
-$(document).ready(function(){
-    $('.submit').click(function (event){
-      event.preventDefault()
-      console.log('clicked button')
+function validation(){
+    var name = document.getElementById("name").value;
+    var subject = document.getElementById("subject").value;
+    var email = document.getElementById("email").value;
+    var adress = document.getElementById("adress").value;
+    var error_message = document.getElementById("error_message");
+    var text;
 
-      var name = $('.name').val()
-      var subject = $('.subject').val()
-      var email = $('.email').val()
-      var address = $('.address').val()
-      var statusElement = $('.status')
-      statusElement.empty()
+    error_message.style.padding = "10px";
 
+    var text;
 
-
-      if(name.length >= 1) {
-          statusElement.append('<div> Name is valid</div>')
-      } else {
-          statusElement.append('<div> Name is not valid</div>')
-      }  
-      
-      if(subject.length >= 10) {
-          statusElement.append('<div> Subject is valid</div>')
-      } else {
-          statusElement.append('<div> Subject is not valid</div>')
+    if(name.length < 5){
+        text = "Please Enter valid Name";
+        error_message.innerHTML = text;
+        return false;
+      }
+      if(subject.length < 10){
+        text = "Please valid Subject";
+        error_message.innerHTML = text;
+        return false;
       }
 
-      if(email.length >= 5 && email.includes('@') && email.includes('.')){
-          statusElement.append('<div> Email is valid</div>')
-      } else {
-          statusElement.append('<div> Email is not valid</div>')
+      if(email.indexOf("@") == -1 || email.length < 5){
+        text = "Please Enter valid Email";
+        error_message.innerHTML = text;
+        return false;
       }
-
-      if(address.length >= 25){
-          statusElement.append('<div> Address is valid</div>')
-      } else {
-          statusElement.append('<div> Address is not valid</div>')
+      if(adress.length <= 25){
+        text = "Please Enter More Than 25 Characters in Your Adress";
+        error_message.innerHTML = text;
+        return false;
       }
-    })
-  })
+      alert("Form Submitted Successfully!");
+      return true;
+ 
 
+}
+
+    
+
+
+
+    
+    
+
+    
+    
+   
